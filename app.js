@@ -1,6 +1,17 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+// db connection
+mongoose.connect(
+	'mongodb+srv://smith123:smith123@cluster0-donof.mongodb.net/<dbname>?retryWrites=true&w=majority',
+	{
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	},
+	console.log('MongoDb connected...')
+);
 
 const app = express();
 const productRoutes = require('./api/routes/poducts');
