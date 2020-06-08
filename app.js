@@ -12,6 +12,7 @@ mongoose.connect(
 	},
 	console.log('MongoDb connected...')
 );
+mongoose.Promise = global.Promise;
 
 const app = express();
 const productRoutes = require('./api/routes/poducts');
